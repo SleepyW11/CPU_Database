@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    font-family: "Sora", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 3em;
+    border: 2px black solid;
+    box-shadow: #999999 5px 5px 4px;
+}
+
+.selects {
+    font-family: "Sora", sans-serif;
+    font-size: 1.3em;
+    float: left;
+    width: calc(20%);
+}
+
+.selects select {
+    font-size: 1em;
+}
+
+.main-body {
+    padding-top: 20px;
+    clear: both;
+}
+
+.main-body .cpu-item {
+    line-height: 1.5em;
+    font-family: "Sora", sans-serif;
+    float: left;
+    width: calc(25%);
+}
+
+.main-body .cpu-item h3 {
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+    .main-body .cpu-item {
+        width: calc(33.33%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-body .cpu-item {
+        width: calc(50%);
+    }
+}
