@@ -4,12 +4,15 @@
 }
 
 body {
+    position: relative;
     padding-left: 20px;
     padding-right: 20px;
+    font-family: "Sora", sans-serif;
+    height: 100%;
+    min-height: calc(100vh - 20px);
 }
 
 h1 {
-    font-family: "Sora", sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 3em;
@@ -18,7 +21,6 @@ h1 {
 }
 
 .selects {
-    font-family: "Sora", sans-serif;
     font-size: 1.3em;
     float: left;
     width: calc(20%);
@@ -35,13 +37,50 @@ h1 {
 
 .main-body .cpu-item {
     line-height: 1.5em;
-    font-family: "Sora", sans-serif;
     float: left;
     width: calc(25%);
+    padding-bottom: 100px;
 }
 
 .main-body .cpu-item h3 {
+    display: inline;
     padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.full-details {
+    position: absolute;
+    background-color: #dedede;
+    width: calc(100% - 100px);
+    height: calc(100vh - 100px);
+    padding: 50px;
+    margin: -20px;
+    display: none;
+    top: 0px;
+}
+.full-details section {
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+.full-details section h3 {
+    padding-bottom: 20px;
+}
+.full-details .x {
+    color: black;
+    float: right;
+    font-size: 4em;
+    margin-top: -15px;
+}
+.full-details .x a, .full-details .x a:hover, .full-details .x a:active {
+    text-decoration: none;
+    color: black;
+
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -52,6 +91,9 @@ h1 {
 
 @media only screen and (max-width: 768px) {
     .main-body .cpu-item {
+        width: calc(50%);
+    }
+    .selects {
         width: calc(50%);
     }
 }

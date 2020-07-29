@@ -36,7 +36,7 @@
         "memchannels": 2,
         "pciev": "PCIe 3.0 x16",
         "unlocked": "yes",
-        "l3c": "32MB",
+        "l3c": "6MB",
         "igpu": "",
         "igpus": null,
         "year": 2019
