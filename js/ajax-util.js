@@ -1,7 +1,6 @@
 var rval;
 function ifetch(url, func, isj) {
     req = new XMLHttpRequest();
-    var rval;
     req.onreadystatechange = function() {
         handler(req, func, isj)
     }
