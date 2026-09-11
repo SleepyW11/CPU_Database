@@ -1,16 +1,31 @@
 <section class="cpu-item">
-    <h3>{{name}}</h3>
-    Base Clock: {{base}}Ghz<br>
-    Boost Clock: {{boost}}Ghz<br>
-    No. of Cores: {{cores}}<br>
-    No. of Threads: {{threads}}<br>
-    CMOS: {{litho}}nm<br>
-    Socket: {{socket}}<br>
-    TDP: {{tdp}}W<br>
-    Memory: {{memtype}} {{memspeed}}<br>
-    Memory Channels: {{memchannels}}<br>
-    PCIe: {{pciev}}<br>
-    Cache: {{l3c}}<br>
-    iGPU: {{igpu}} {{igpus}}<br>
-    Year: {{year}}<br>
+    <div class="detail-hero">
+        <div>
+            <p class="eyebrow">{{generation}} processor profile</p>
+            <h3>{{name}}</h3>
+        </div>
+        <span class="detail-badge">{{year}}</span>
+    </div>
+    <div class="detail-highlights">
+        <div><span>Base clock</span><strong>{{base}} GHz</strong></div>
+        <div><span>Max boost clock</span><strong>{{boost}}</strong></div>
+        <div><span>Core / thread</span><strong>{{cores}} / {{threads}}</strong></div>
+        <div><span>Thermal design</span><strong>{{tdp}} W</strong></div>
+    </div>
+    <div class="detail-specs">
+        <div class="spec-group">
+            <h4>Architecture</h4>
+            <p><span>Process node</span><strong>{{litho}} nm</strong></p>
+            <p><span>Socket</span><strong>{{socket}}</strong></p>
+            <p><span>Cache</span><strong>{{l3c}}</strong></p>
+        </div>
+        <div class="spec-group">
+            <h4>Platform</h4>
+            <p><span>Memory</span><strong>{{memtype}} {{memspeed}}</strong></p>
+            <p><span>Channels</span><strong>{{memchannels}}</strong></p>
+            <p><span>PCIe</span><strong>{{pciev}}</strong></p>
+        </div>
+    </div>
+    <div class="detail-footnote"><span>Integrated graphics</span><strong>{{igpu}} {{igpus}}</strong></div>
+    <div class="detail-footnote"><span>Unlocked / multithreading</span><strong>{{unlocked}} / {{multithreading}}</strong></div>
 </section>

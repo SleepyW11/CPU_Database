@@ -3,43 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <title>CPU Database</title>
 </head>
 <body>
-    <h1>CPU Database</h1>
-    <div class="selects">
-        <span>Brand :</span>
-        <select name="brand" id="brand">
-            <option value="amd intel">All</option>
-            <option value="intel">Intel</option>
-            <option value="amd">AMD</option>
-        </select>
-    </div>
-    <div class="selects">
-        <span>Year :</span>
-        <select name="year" id="year">
-            <option value="2019 2020">All</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-        </select>
-    </div>
-    <div class="main-body">
-        <hr>
-        <div class="item-container">
-            
+    <header class="site-header">
+        <div class="brand-mark"><span>CPU</span><strong>DB</strong></div>
+        <div>
+            <p class="eyebrow">Component intelligence</p>
+            <h1>CPU Database</h1>
+            <p class="header-note">Compare the processors that power your next build.</p>
         </div>
-    </div>
-    <div class="full-details">
-        <div class="x">
-            <a href="#">x</a>
+        <div class="header-utility">
+            <div class="theme-control">
+                <label for="theme">Theme</label>
+                <select id="theme" name="theme">
+                    <option value="burgundy">Burgundy</option>
+                    <option value="citrus">Citrus</option>
+                    <option value="ember">Ember</option>
+                    <option value="forest">Forest</option>
+                    <option value="graphite">Graphite</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="rosewood">Rosewood</option>
+                </select>
+            </div>
         </div>
-        <div class="full-details-con">
-            
+    </header>
+
+    <main>
+        <section class="toolbar" aria-label="Search and filter processors">
+            <div class="toolbar-title">
+                <span class="status-dot"></span>
+                <div>
+                    <p class="eyebrow">Browse the archive</p>
+                    <h2>Find your next CPU</h2>
+                </div>
+            </div>
+            <div class="search-wrap">
+                <label for="search">Search processors</label>
+                <input type="search" id="search" placeholder="Search by name or generation" autocomplete="off">
+            </div>
+            <div class="filter-popover-wrap">
+                <button class="filter-button" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-menu">
+                    <span class="filter-icon" aria-hidden="true">≡</span>
+                    Filters <span class="filter-count" id="filter-count">0</span>
+                </button>
+                <div class="filter-menu" id="filter-menu" hidden>
+                    <div class="filter-menu-heading">
+                        <div>
+                            <p class="eyebrow">Refine results</p>
+                            <h3>Processor filters</h3>
+                        </div>
+                        <button class="clear-filters" id="clear-filters" type="button">Clear all</button>
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="brand">Brand</label>
+                            <select name="brand" id="brand">
+                                <option value="all">All brands</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="year">Release year</label>
+                            <select name="year" id="year">
+                                <option value="all">All years</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="cores">Minimum cores</label>
+                            <select name="cores" id="cores">
+                                <option value="0">Any core count</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="socket">Socket</label>
+                            <select name="socket" id="socket">
+                                <option value="all">All sockets</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-body">
+            <div class="section-heading">
+                <h2>Processor catalogue</h2>
+                <span class="section-rule"></span>
+                <span class="result-count" id="result-count"></span>
+            </div>
+            <div class="catalogue-status" id="catalogue-status" role="status" aria-live="polite">
+                <span class="loader-spinner" aria-hidden="true"></span>
+                Loading processor catalogue...
+            </div>
+            <div class="item-container"></div>
+            <nav class="pagination" id="pagination" aria-label="Catalogue pages"></nav>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Data sourced from</span>
+        <a href="https://www.techpowerup.com/cpu-specs/" target="_blank" rel="noopener noreferrer">TechPowerUp CPU Database</a>
+    </footer>
+
+    <div class="full-details" role="dialog" aria-modal="true" aria-label="CPU details">
+        <div class="modal-panel">
+            <div class="details-topline">
+                <span class="eyebrow">Full specifications</span>
+                <div class="x">
+                    <a href="#" aria-label="Close details">&times;</a>
+                </div>
+            </div>
+            <div class="full-details-con">
+            </div>
         </div>
     </div>
     <script src="js/script.js"></script>
-    <script src="js/ajax-util.js"></script>
 </body>
 </html>

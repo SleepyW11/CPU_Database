@@ -1,16 +1,15 @@
 <section class="cpu-item">
-    <h3  onclick="itemReplaceFull(xyzitem00)">{{name}}</h3><br>
-    Base Clock: {{base}}Ghz<br>
-    Boost Clock: {{boost}}Ghz<br>
-    No. of Cores: {{cores}}<br>
-    No. of Threads: {{threads}}<br>
-    <!-- CMOS: {{litho}}nm<br>
-    Socket: {{socket}}<br> -->
-    TDP: {{tdp}}W<br>
-    <!-- Memory: {{memtype}} {{memspeed}}<br>
-    Memory Channels: {{memchannels}}<br>
-    PCIe: {{pciev}}<br> -->
-    Cache: {{l3c}}<br>
-    <!-- iGPU: {{igpu}} {{igpus}}<br>
-    Year: {{year}}<br> -->
+    <button class="cpu-title" type="button" onclick="itemReplaceFull(xyzitem00)">{{name}}</button>
+    <div class="cpu-meta">
+        <span>{{socket}}</span>
+        <span>{{year}}</span>
+    </div>
+    <div class="cpu-spec-grid">
+        <div><span>Base clock</span><strong>{{base}} GHz</strong></div>
+        <div><span>Max boost</span><strong>{{boost}}</strong></div>
+        <div><span>Cores</span><strong>{{cores}}</strong></div>
+        <div><span>Threads</span><strong>{{threads}}</strong></div>
+        <div><span>TDP</span><strong>{{tdp}} W</strong></div>
+        <div><span>Cache</span><strong>{{l3c}}</strong></div>
+    </div>
 </section>
