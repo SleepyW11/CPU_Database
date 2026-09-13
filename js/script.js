@@ -1,10 +1,11 @@
-var item_snippet;
-var full_snippet;
-var data;
-var cpuApiUrl = "https://www.techpowerup.com/cpu-specs/api/v1/chips";
-var currentPage = 1;
-var pageSize = 8;
-var filteredRecords = [];
+(function() {
+let item_snippet;
+let full_snippet;
+let data;
+const cpuApiUrl = "https://www.techpowerup.com/cpu-specs/api/v1/chips";
+let currentPage = 1;
+const pageSize = 8;
+let filteredRecords = [];
 
 async function fetchResource(url, responseType) {
     var response = await fetch(url);
@@ -26,6 +27,10 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("filter-toggle").addEventListener("click", toggleFilterMenu);
     document.getElementById("clear-filters").addEventListener("click", clearFilters);
     document.getElementById("theme").addEventListener("change", changeTheme);
+    document.querySelector(".item-container").addEventListener("click", function(event) {
+        var button = event.target.closest("[data-cpu-index]");
+        if (button) itemReplaceFull(button.dataset.cpuIndex);
+    });
     document.addEventListener("click", closeFilterMenuOnOutsideClick);
     document.addEventListener("keydown", function(event) {
         if (event.key === "Escape") {
@@ -155,7 +160,7 @@ function populateSelect(id, values, labelFormatter) {
 
 function itemReplace() {
     if (!data) return;
-    container = document.querySelector(".item-container");
+    var container = document.querySelector(".item-container");
     var search = document.querySelector("#search").value.trim().toLowerCase();
     var brand = document.querySelector("#brand").value;
     var year = document.querySelector("#year").value;
@@ -164,7 +169,7 @@ function itemReplace() {
     var string;
     container.innerHTML = "";
     filteredRecords = [];
-    for(item in data) {
+    for (var item in data) {
         var cpu = data[item];
         var searchableText = (cpu.name + " " + cpu.architecture.generation).toLowerCase();
         if((!search || searchableText.includes(search)) &&
@@ -273,7 +278,7 @@ function updateFilterCount() {
     document.querySelector("#filter-count").textContent = activeFilters;
 }
 function itemReplaceFull(num) {
-    container = document.querySelector(".full-details-con");
+    var container = document.querySelector(".full-details-con");
     var string;
     container.innerHTML = "";
     string = full_snippet;
@@ -299,3 +304,4 @@ function itemReplaceFull(num) {
     container.innerHTML += string;
     document.querySelector(".full-details").style.display = "flex";
 }
+})();
